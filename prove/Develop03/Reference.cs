@@ -21,6 +21,8 @@ public class Reference {
         return _endVerse == 0 ? $"{_book} {_chapter}:{_verse}" : $"{_book} {_chapter}:{_verse}-{_endVerse}";
     }
 
+    
+
 
 
 
