@@ -3,6 +3,7 @@ public class Reference {
     private int _chapter;
     private int _verse;
     private int _endVerse;
+    private string _verses;
 
     public Reference (string book, int chapter, int verse ){
         _book = book;
@@ -16,6 +17,13 @@ public class Reference {
         _verse = startVerse;
         _endVerse = endVerse;
     }
+
+    public Reference (string book, int chapter, string verses ){
+        _book = book;
+        _chapter = chapter;
+        _verses = verses;
+    }
+
 
     public string GetDisplayText(){
         return _endVerse == 0 ? $"{_book} {_chapter}:{_verse}" : $"{_book} {_chapter}:{_verse}-{_endVerse}";
