@@ -5,7 +5,6 @@ class Program
     static void Main(string[] args)
     {
         bool quit = false;
-        Console.WriteLine("Hello Develop04 World!");
         Console.WriteLine("Welcome to the Journal Program!");
         while (!quit) 
         {
