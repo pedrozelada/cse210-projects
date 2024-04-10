@@ -1,6 +1,6 @@
 public class HealthyDiet : Habit
 {
-    private int _weeks; 
+    
     private Dictionary<string, string> _healthyHabits = new Dictionary<string, string>
     {
         { "Control portions", "Each body needs a different amount of calories, so it is crucial to consume portions adapted to each person's characteristics." },
@@ -10,7 +10,7 @@ public class HealthyDiet : Habit
         { "Eat slowly and chew food well", "Eating slowly promotes a feeling of satiety and facilitates digestion." },
         { "Avoid junk food consumption", "Junk foods are rich in saturated fats and sugars, increasing the risk of diabetes, obesity, and cardiovascular diseases." },
         { "Consume fish at least twice a week", "Fish, especially oily fish like sardines and salmon, provide high-quality proteins, vitamins, minerals, and Omega-3 fatty acids." },
-        { "EXTRA: Consume legumes once a week", "Legumes are a good source of protein and iron. Drink orange juice or lemon juice with legumes to enhance their nutritional value." }
+        { "Consume legumes once a week", "Legumes are a good source of protein and iron. Drink orange juice or lemon juice with legumes to enhance their nutritional value." }
     };
 
     public HealthyDiet()
@@ -21,7 +21,8 @@ public class HealthyDiet : Habit
     {
         _name = name;
         _description = description;
-        _weeks = time;
+        _week = time;
+        
     }
 
     public override void GenerateRandom()
@@ -53,8 +54,5 @@ public class HealthyDiet : Habit
 
     }
 
-    public override void Tracking()
-    {
-        throw new NotImplementedException();
-    }
+   
 }
