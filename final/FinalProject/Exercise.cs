@@ -18,13 +18,16 @@ public class Exercise : Habit
     {
 
     }
-    public Exercise(string name, string description, int week) : base(name, description)
+    public Exercise(string name, string description) : base(name, description)
+    {
+
+    }
+    public Exercise(string name, string description, int week, char[] track) : base(name, description)
     {
         _name = name;
         _description = description;
         _week = week;
-
-        
+        _track = track;
     }
 
     public override void GenerateRandom()

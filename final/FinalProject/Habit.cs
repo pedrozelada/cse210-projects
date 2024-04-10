@@ -101,7 +101,16 @@ public abstract class Habit
 
     public string Representation()
     {
-        return $"{_name}:{_description}:{_week}";
+        for (int i = 0; i < _track.Length; i++)
+        {
+            if (_track[i] == '\0')
+            {
+                _track[i] = ' ';
+            }
+        }
+
+        string result = new string(_track);
+        return $"{_name}:{_description}:{_week}:{result}";
     }
 
     public string GetHabit ()

@@ -59,7 +59,7 @@ public class HabitManager
 
     public void ListHabits()
     {
-         int i = 1;
+        int i = 1;
         Console.WriteLine("The habits are: ");
         foreach (Habit habit in _habits)
         {
@@ -71,7 +71,7 @@ public class HabitManager
 
     public void ListHabitsTrack()
     {
-         int i = 1;
+        int i = 1;
         Console.WriteLine("The habits are: ");
         foreach (Habit habit in _habits)
         {
@@ -140,7 +140,7 @@ public class HabitManager
                 string name = Console.ReadLine();
                 Console.Write("what is the description of the habit ");
                 string description = Console.ReadLine();
-                Exercise exercise = new Exercise(name, description,3);
+                Exercise exercise = new Exercise(name, description);
                 _habits.Add(exercise);
             }
         }
@@ -288,14 +288,16 @@ public class HabitManager
         Console.Write("Enter the name of your habits file: ");
         string filename= Console.ReadLine();
         string[] lines = System.IO.File.ReadAllLines(filename);
-        for (int i = 1; i < lines.Length; i++)
+        for (int i = 0; i < lines.Length; i++)
         {
             string line = lines[i];
             string[] parts = line.Split(":");
             string nameHabit = parts[0];
             string descriptionHabit = parts[1];
             string week = parts[2];
-            Exercise habit = new Exercise(nameHabit, descriptionHabit, int.Parse(week));
+            string track = parts[3];
+            char[] trackArray = track.ToCharArray();
+            Exercise habit = new Exercise(nameHabit, descriptionHabit, int.Parse(week), trackArray);
             _habits.Add(habit);
         }            
 
